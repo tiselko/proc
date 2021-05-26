@@ -66,3 +66,8 @@ export function buildObjectFromStr(obj) {
 
   return str;
 }
+
+export function relationship(power) {
+  let weightPeople = 75;
+  return weightPeople / power;
+}
