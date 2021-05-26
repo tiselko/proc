@@ -1,0 +1,25 @@
+{
+  "name": "proc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tiselko/proc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tiselko/proc/issues"
+  },
+  "homepage": "https://github.com/tiselko/proc#readme",
+  "dependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/node": "^7.13.13",
+    "@babel/preset-env": "^7.14.1"
+  }
+}
