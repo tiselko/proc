@@ -81,3 +81,11 @@ export function compare(a, b) {
   }
   return 0;
 }
+
+export function checkCorrectData(array) {
+  array.forEach((item) => {
+    if (!Number.isInteger(Number(item[0]))) {
+      throw "Ошибка в id!";
+    }
+  });
+}

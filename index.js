@@ -4,7 +4,7 @@ import {
   sorting,
   skip,
 } from "./src/container/Container";
-import { switchedObject } from "./src/functions/functions";
+import { switchedObject, checkCorrectData } from "./src/functions/functions";
 import {
   File,
   clearFile,
@@ -18,34 +18,40 @@ function main() {
   let file = new File("1.txt", "2.txt");
   clearFile(file);
 
-  writeStrFromFile(file, "Начало!");
-  readFile(file);
+  try {
+    writeStrFromFile(file, "Начало!");
+    readFile(file);
 
-  const container = new Container();
-  const array = buildFileFromArray(file);
+    const container = new Container();
+    const array = buildFileFromArray(file);
 
-  switchedObject(array, container);
+    checkCorrectData(array);
 
-  writeStrFromFile(
-    file,
-    `Кол-во элементов в контейнере: ${container.arr.length}`
-  );
-  writeStrFromFile(file, "Обычный контейнер:");
-  writeContainerFromFile(file, container.arr);
+    switchedObject(array, container);
 
-  writeStrFromFile(file, "Отсортированный контейнер:");
-  sorting(container);
-  writeContainerFromFile(file, container.arr);
+    writeStrFromFile(
+      file,
+      `Кол-во элементов в контейнере: ${container.arr.length}`
+    );
+    writeStrFromFile(file, "Обычный контейнер:");
+    writeContainerFromFile(file, container.arr);
 
-  writeStrFromFile(file, "Контейнер с пропусками:");
-  skip(container, file, writeStrFromFile, 2);
+    writeStrFromFile(file, "Отсортированный контейнер:");
+    sorting(container);
+    writeContainerFromFile(file, container.arr);
 
-  containerClear(container);
-  writeStrFromFile(
-    file,
-    `Кол-во элементов в контейнере: ${container.arr.length}`
-  );
-  writeStrFromFile(file, "Конец!");
+    writeStrFromFile(file, "Контейнер с пропусками:");
+    skip(container, file, writeStrFromFile, 2);
+
+    containerClear(container);
+    writeStrFromFile(
+      file,
+      `Кол-во элементов в контейнере: ${container.arr.length}`
+    );
+    writeStrFromFile(file, "Конец!");
+  } catch (error) {
+    writeStrFromFile(file, error);
+  }
 }
 
 main();
