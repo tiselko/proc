@@ -1,9 +1,11 @@
 import { Truck } from "../truck/Truck";
 import { Bus } from "../bus/Bus";
+import { Car } from "../car/Car";
 
 export function switchedObject(array, container) {
   let truck = null;
   let bus = null;
+  let car = null;
 
   array.forEach((element) => {
     let params = {
@@ -30,6 +32,15 @@ export function switchedObject(array, container) {
         };
         bus = new Bus(busParams);
         container.arr.push(bus);
+        break;
+      case "3":
+        const carParams = {
+          id: params.id,
+          speed: params.value,
+          power: params.power,
+        };
+        car = new Car(carParams);
+        container.arr.push(car);
         break;
       default:
         break;
