@@ -3,6 +3,7 @@ import {
   containerClear,
   sorting,
   skip,
+  containerMultimethod,
 } from "./src/container/Container";
 import { switchedObject, checkCorrectData } from "./src/functions/functions";
 import {
@@ -35,6 +36,9 @@ function main() {
     );
     writeStrFromFile(file, "Обычный контейнер:");
     writeContainerFromFile(file, container.arr);
+
+    writeStrFromFile(file, "Мультиметод:");
+    containerMultimethod(container.arr, file, writeStrFromFile);
 
     writeStrFromFile(file, "Отсортированный контейнер:");
     sorting(container);

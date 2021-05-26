@@ -3,4 +3,5 @@ export function Bus({ id, capacity, power, fuel }) {
   this.capacity = capacity;
   this.power = power;
   this.fuel = fuel;
+  this.className = "Bus";
 }
