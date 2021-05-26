@@ -1,4 +1,8 @@
-import { Container, containerClear } from "./src/container/Container";
+import {
+  Container,
+  containerClear,
+  containerMultimethod,
+} from "./src/container/Container";
 import { switchedObject } from "./src/functions/functions";
 import {
   File,
@@ -27,6 +31,9 @@ function main() {
   );
   writeStrFromFile(file, "Обычный контейнер:");
   writeContainerFromFile(file, container.arr);
+
+  writeStrFromFile(file, "Мультиметод:");
+  containerMultimethod(container.arr, file, writeStrFromFile);
 
   containerClear(container);
   writeStrFromFile(
