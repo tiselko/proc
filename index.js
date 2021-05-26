@@ -1,4 +1,4 @@
-import { Container, containerClear } from "./src/container/Container";
+import { Container, containerClear, sorting } from "./src/container/Container";
 import { switchedObject } from "./src/functions/functions";
 import {
   File,
@@ -26,6 +26,10 @@ function main() {
     `Кол-во элементов в контейнере: ${container.arr.length}`
   );
   writeStrFromFile(file, "Обычный контейнер:");
+  writeContainerFromFile(file, container.arr);
+
+  writeStrFromFile(file, "Отсортированный контейнер:");
+  sorting(container);
   writeContainerFromFile(file, container.arr);
 
   containerClear(container);

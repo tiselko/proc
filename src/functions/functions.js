@@ -71,3 +71,13 @@ export function relationship(power) {
   let weightPeople = 75;
   return weightPeople / power;
 }
+
+export function compare(a, b) {
+  if (a < b) {
+    return -1;
+  }
+  if (a > b) {
+    return 1;
+  }
+  return 0;
+}
