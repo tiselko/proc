@@ -1,4 +1,9 @@
-import { Container, containerClear, sorting } from "./src/container/Container";
+import {
+  Container,
+  containerClear,
+  sorting,
+  skip,
+} from "./src/container/Container";
 import { switchedObject } from "./src/functions/functions";
 import {
   File,
@@ -31,6 +36,9 @@ function main() {
   writeStrFromFile(file, "Отсортированный контейнер:");
   sorting(container);
   writeContainerFromFile(file, container.arr);
+
+  writeStrFromFile(file, "Контейнер с пропусками:");
+  skip(container, file, writeStrFromFile, 2);
 
   containerClear(container);
   writeStrFromFile(
