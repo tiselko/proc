@@ -13,6 +13,7 @@ import {
   readFile,
   buildFileFromArray,
   writeContainerFromFile,
+  exists,
 } from "./src/file/File";
 
 function main() {
@@ -20,6 +21,10 @@ function main() {
   clearFile(file);
 
   try {
+    if (!exists(file)) {
+      throw "Файл не найден!";
+    }
+
     writeStrFromFile(file, "Начало!");
     readFile(file);
 

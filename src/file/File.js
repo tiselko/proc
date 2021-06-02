@@ -13,6 +13,10 @@ export function readFile(file) {
   );
 }
 
+export function exists(file) {
+  return fs.existsSync(file.filePathInput);
+}
+
 export function writeStrFromFile(file, str) {
   fs.appendFileSync(file.filePathOutput, str + "\n");
 }
@@ -31,4 +35,5 @@ export function writeContainerFromFile(file, array) {
 
 export function clearFile(file) {
   fs.writeFile(file.filePathOutput.toString(), "", () => {});
+  return fs.readFileSync(file.filePathOutput, "utf-8").toString().split("\n");
 }

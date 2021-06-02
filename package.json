@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node ./index.js"
+    "start": "babel-node ./index.js",
+    "test": "jest src/tests/"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,8 @@
     "@babel/core": "^7.14.0",
     "@babel/node": "^7.13.13",
     "@babel/preset-env": "^7.14.1"
+  },
+  "devDependencies": {
+    "jest": "^27.0.3"
   }
 }

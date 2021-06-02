@@ -16,6 +16,7 @@ export function sorting(container) {
 
 export function containerClear(container) {
   container.arr = [];
+  return container.arr;
 }
 
 export function skip(container, file, writeStrFromFile, skipId) {
